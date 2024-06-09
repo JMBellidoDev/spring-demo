@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=ç, initial-scale=1.0">
+    <title th:text="${title}">Document</title>
+</head>
+
+<body>
+    <h1 th:text="${title}">Titulo</h1>
+    <ul>
+        <li th:text="${user.name}">Nombre</li>
+        <li th:text="${user.lastname}">Apellidos</li>
+        <li th:if="not ${user.email}" th:text="'No hay email'">Email</li>
+        <li th:text="${user.age}">Edad</li>
+    </ul>
+    <a th:href="@{/list}"}>Ver listado</a>
+    <a th:href="@{/api/params/foo(message=${title})}"}>Ver /api/params/foo con title</a>
+    <a th:href="@{/api/params/foo(message='Literal String de la ruta')}"}>Ver /api/params/foo usando literales</a>
+</body>
+
+</html>
